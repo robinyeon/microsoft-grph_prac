@@ -8,14 +8,12 @@ const yargs = require("yargs");
 const fetch = require("./fetch");
 const auth = require("./auth");
 
-const options = yargs
-  .usage("Usage: --op <operation_name>")
-  .option("op", {
-    alias: "operation",
-    describe: "operation name",
-    type: "string",
-    demandOption: true,
-  }).argv;
+const options = yargs.usage("Usage: --op <operation_name>").option("op", {
+  alias: "operation",
+  describe: "operation name",
+  type: "string",
+  demandOption: true,
+}).argv;
 
 async function main() {
   console.log(`You have selected: ${options.op}`);
@@ -35,7 +33,7 @@ async function main() {
         // display result
         console.log(users);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
 
       break;
